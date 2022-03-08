@@ -11,5 +11,4 @@ protobuf = { version = "2.27.1", features = ["with-bytes"] }
 
 
 [build-dependencies]
-protobuf-codegen = { version = "2.27.1" }
 protoc-rust = { version = "2.27.1" }

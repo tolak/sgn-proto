@@ -128,7 +128,6 @@ name = "sgn-proto"
 version = "0.1.0"
 dependencies = [
  "protobuf",
- "protobuf-codegen",
  "protoc-rust",
 ]
 

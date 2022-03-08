@@ -1,10 +1,6 @@
 syntax = "proto3";
 option go_package = "github.com/celer-network/sgn-v2/proto/eth";
 
-// option (rustproto.carllerche_bytes_for_bytes_all) = true;
-// option (rustproto.carllerche_bytes_for_string_all) = true;
-
-// import "protobuf/rustproto.proto";
 import "google/protobuf/descriptor.proto";
 
 package pegged;
