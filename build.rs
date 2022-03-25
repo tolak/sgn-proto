@@ -1,10 +1,9 @@
 extern crate protoc_rust;
-use std::env;
 use std::fs;
 use std::path::Path;
 
 fn main() {
-    let out_dir = env::var("OUT_DIR").unwrap_or(String::from("src/binding/protos"));
+    let out_dir = String::from("src/binding/protos");
     if Path::new(&out_dir).exists() {
         fs::remove_dir_all(&out_dir).unwrap();
     }
