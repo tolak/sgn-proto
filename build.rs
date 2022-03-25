@@ -1,4 +1,3 @@
-extern crate protoc_rust;
 use std::fs;
 use std::path::Path;
 
@@ -9,14 +8,10 @@ fn main() {
     }
     fs::create_dir(&out_dir).unwrap();
 
-    protoc_rust::Codegen::new()
-        .customize(protoc_rust::Customize {
-            gen_mod_rs: Some(true),
-            ..Default::default()
-        })
-        .out_dir(out_dir)
-        .include("src/protos")
-        .inputs(&["src/protos/rustproto.proto", "src/protos/pegged.proto"])
-        .run()
-        .expect("Running protoc failed.");
+    let mut config = prost_build::Config::new();
+    config.
+    out_dir(out_dir).
+    btree_map(&["."]).
+    compile_protos(&["src/protos/rustproto.proto", "src/protos/pegged.proto"],
+        &["src/protos"]).unwrap();
 }
